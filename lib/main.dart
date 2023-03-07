@@ -37,6 +37,13 @@ class DetailScreen extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 )),
+            Container(
+                padding: const EdgeInsets.all(16.0),
+                child: const Text(
+                  'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, omnis quo officiis sed laudantium officia natus commodi pariatur fugiat eum quas dolor consequuntur expedita voluptatem sit rerum voluptates sint perferendis!',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 16.0),
+                ))
           ]),
     ));
   }
