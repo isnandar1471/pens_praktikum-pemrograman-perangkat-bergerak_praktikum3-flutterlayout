@@ -38,6 +38,19 @@ class DetailScreen extends StatelessWidget {
                   ),
                 )),
             Container(
+                margin: const EdgeInsets.symmetric(vertical: 16.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Column(
+                      children: const <Widget>[
+                        Icon(Icons.calendar_today),
+                        Text('Open Everyday'),
+                      ],
+                    ),
+                  ],
+                )),
+            Container(
                 padding: const EdgeInsets.all(16.0),
                 child: const Text(
                   'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, omnis quo officiis sed laudantium officia natus commodi pariatur fugiat eum quas dolor consequuntur expedita voluptatem sit rerum voluptates sint perferendis!',
