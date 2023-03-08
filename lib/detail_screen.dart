@@ -8,6 +8,19 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> galleryWidgetList = place.gallery.map(
+      (imageLink) {
+        return Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(30.0),
+            child: Image.network(imageLink),
+          ),
+        );
+      },
+    ).toList();
+    print(galleryWidgetList);
+
     return Scaffold(
         body: SafeArea(
       child: Column(
@@ -30,29 +43,29 @@ class DetailScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     Column(
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.calendar_today),
-                        Text('Open Everyday'),
+                        Text(place.dayOpen),
                       ],
                     ),
                     Column(
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.access_time),
-                        Text('08:00 - 16:00'),
+                        Text(place.timeOpen),
                       ],
                     ),
                     Column(
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.attach_money),
-                        Text('Rp. 10.000,-'),
+                        Text(place.price),
                       ],
                     ),
                   ],
                 )),
             Container(
                 padding: const EdgeInsets.all(16.0),
-                child: const Text(
-                  'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+                child: Text(
+                  place.description,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 16.0,
@@ -63,34 +76,7 @@ class DetailScreen extends StatelessWidget {
               height: 150,
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(30.0),
-                      child: Image.network(
-                          'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: ClipRRect(
-                        borderRadius: BorderRadius.circular(30.0),
-                        child: Image.asset('assets/images/submarine.jfif')),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: ClipRRect(
-                        borderRadius: BorderRadius.circular(30.0),
-                        child: Image.asset('assets/images/submarine.jfif')),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: ClipRRect(
-                        borderRadius: BorderRadius.circular(30.0),
-                        child: Image.asset('assets/images/submarine.jfif')),
-                  ),
-                ],
+                children: galleryWidgetList,
               ),
             ),
           ]),

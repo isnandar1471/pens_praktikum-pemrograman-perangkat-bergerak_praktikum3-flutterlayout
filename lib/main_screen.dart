@@ -17,7 +17,10 @@ class MainScreen extends StatelessWidget {
           return InkWell(
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return DetailScreen(place: place);
+                var tes = DetailScreen(place: place);
+                print(21);
+                print(tes.runtimeType);
+                return tes;
               }));
             },
             child: listItem(place),
