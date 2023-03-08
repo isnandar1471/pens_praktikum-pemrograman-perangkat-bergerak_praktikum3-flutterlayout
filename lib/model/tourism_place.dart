@@ -36,4 +36,14 @@ var tourismPlaceList = [
     location: 'Wonokromo',
     imageAsset: 'assets/images/sby.jpeg',
   ),
+  TourismPlace(
+    name: 'Kapal hitam',
+    location: 'Jl pemuda',
+    imageAsset: 'assets/images/submarine.jfif',
+  ),
+  TourismPlace(
+    name: 'Poster pahlawan',
+    location: 'Alun-alun contong',
+    imageAsset: 'assets/images/pahlawan.jpg',
+  ),
 ];
