@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:praktikum3_flutterlayout_part1/detail_screen.dart';
+import 'package:praktikum3_flutterlayout_part1/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(),
-      home: const DetailScreen(),
+      home: const MainScreen(),
     );
   }
 }

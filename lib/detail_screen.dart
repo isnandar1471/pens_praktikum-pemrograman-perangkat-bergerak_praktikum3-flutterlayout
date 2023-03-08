@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:praktikum3_flutterlayout_part1/model/tourism_place.dart';
 
 class DetailScreen extends StatelessWidget {
-  const DetailScreen({Key? key}) : super(key: key);
+  const DetailScreen({Key? key, required this.place}) : super(key: key);
+
+  final TourismPlace place;
 
   @override
   Widget build(BuildContext context) {
@@ -10,11 +13,11 @@ class DetailScreen extends StatelessWidget {
       child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Image.asset('assets/images/submarine.jfif'),
+            Image.asset(place.imageAsset),
             Container(
                 margin: EdgeInsets.only(top: 16.0),
                 child: Text(
-                  'Surabaya Submarine Monument',
+                  place.name,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 30.0,
