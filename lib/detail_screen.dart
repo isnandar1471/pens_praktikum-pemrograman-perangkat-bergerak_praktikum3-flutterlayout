@@ -18,7 +18,7 @@ class DetailScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 30.0,
-                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Lobster',
                   ),
                 )),
             Container(
@@ -39,7 +39,10 @@ class DetailScreen extends StatelessWidget {
                 child: const Text(
                   'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 16.0),
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    fontFamily: 'Oxygen',
+                  ),
                 )),
             Container(
               height: 150,
