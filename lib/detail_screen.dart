@@ -24,7 +24,7 @@ class DetailScreen extends StatelessWidget {
             Container(
                 margin: const EdgeInsets.symmetric(vertical: 16.0),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     Column(
                       children: const <Widget>[
@@ -63,20 +63,29 @@ class DetailScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(4.0),
-                    child: Image.network(
-                        'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(30.0),
+                      child: Image.network(
+                          'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'),
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(4.0),
-                    child: Image.asset('assets/images/submarine.jfif'),
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(30.0),
+                        child: Image.asset('assets/images/submarine.jfif')),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(4.0),
-                    child: Image.asset('assets/images/submarine.jfif'),
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(30.0),
+                        child: Image.asset('assets/images/submarine.jfif')),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(4.0),
-                    child: Image.asset('assets/images/submarine.jfif'),
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(30.0),
+                        child: Image.asset('assets/images/submarine.jfif')),
                   ),
                 ],
               ),
