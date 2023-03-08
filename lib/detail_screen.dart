@@ -24,7 +24,7 @@ class DetailScreen extends StatelessWidget {
             Container(
                 margin: const EdgeInsets.symmetric(vertical: 16.0),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Column(
                       children: const <Widget>[
