@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.praktikum3_flutterlayout_part1">
+    package="com.example.praktikum3_flutterlayout">
    <application
-        android:label="praktikum3_flutterlayout_part1"
+        android:label="praktikum3_flutterlayout"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

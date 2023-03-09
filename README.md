@@ -1,4 +1,4 @@
-# praktikum3_flutterlayout_part1
+# praktikum3_flutterlayout
 
 A new Flutter project.
 

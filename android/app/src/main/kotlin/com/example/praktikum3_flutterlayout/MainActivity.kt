@@ -1,4 +1,4 @@
-package com.example.praktikum3_flutterlayout_part1
+package com.example.praktikum3_flutterlayout
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:praktikum3_flutterlayout_part1/detail_screen.dart';
-import 'package:praktikum3_flutterlayout_part1/model/tourism_place.dart';
+import 'package:praktikum3_flutterlayout/detail_screen.dart';
+import 'package:praktikum3_flutterlayout/model/tourism_place.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);

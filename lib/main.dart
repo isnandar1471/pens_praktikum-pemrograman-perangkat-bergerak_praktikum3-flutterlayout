@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:praktikum3_flutterlayout_part1/main_screen.dart';
+import 'package:praktikum3_flutterlayout/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
