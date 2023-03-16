@@ -2,22 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:praktikum3_flutterlayout/detail_screen.dart';
 import 'package:praktikum3_flutterlayout/list_item.dart';
 import 'package:praktikum3_flutterlayout/model/tourism_place.dart';
+import 'package:praktikum3_flutterlayout/provider/done_tourism_provider.dart';
+import 'package:provider/provider.dart';
 
 class TourismList extends StatefulWidget {
-  final List<TourismPlace> doneTourismPlaceList;
-
   const TourismList({
     super.key,
-    required this.doneTourismPlaceList,
   });
 
   @override
-  _TourismListState createState() => _TourismListState(doneTourismPlaceList);
+  _TourismListState createState() => _TourismListState();
 }
 
 class _TourismListState extends State<TourismList> {
-  final List<TourismPlace> doneTourismPlaceList;
-
   final List<TourismPlace> tourismPlaceList = [
     TourismPlace(
       name: 'Surabaya Submarine Monument',
@@ -126,10 +123,14 @@ class _TourismListState extends State<TourismList> {
     ),
   ];
 
-  _TourismListState(this.doneTourismPlaceList);
-
   @override
   Widget build(BuildContext context) {
+    final List<TourismPlace> doneTourismPlaceList =
+        Provider.of<DoneTourismProvider>(
+      context,
+      listen: false,
+    ).doneTourismPlaceList;
+
     return ListView.builder(
       itemBuilder: (context, index) {
         final TourismPlace place = tourismPlaceList[index];
@@ -139,17 +140,21 @@ class _TourismListState extends State<TourismList> {
               return DetailScreen(place: place);
             }));
           },
-          child: ListItem(
-            place: place,
-            isDone: doneTourismPlaceList.contains(place),
-            onCheckboxClick: (bool? value) {
-              setState(() {
-                if (value != null) {
-                  value
-                      ? doneTourismPlaceList.add(place)
-                      : doneTourismPlaceList.remove(place);
-                }
-              });
+          child: Consumer<DoneTourismProvider>(
+            builder: (context, DoneTourismProvider data, widget) {
+              return ListItem(
+                place: place,
+                isDone: doneTourismPlaceList.contains(place),
+                onCheckboxClick: (bool? value) {
+                  setState(() {
+                    if (value != null) {
+                      value
+                          ? doneTourismPlaceList.add(place)
+                          : doneTourismPlaceList.remove(place);
+                    }
+                  });
+                },
+              );
             },
           ),
         );

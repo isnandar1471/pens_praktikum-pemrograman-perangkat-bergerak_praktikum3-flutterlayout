@@ -11,7 +11,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  final List<TourismPlace> doneTourismPlaceList = [];
+  // final List<TourismPlace> doneTourismPlaceList = [];
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +25,7 @@ class _MainScreenState extends State<MainScreen> {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return DoneTourismList(
-                        doneTourismPlaceList: doneTourismPlaceList);
+                    return DoneTourismList();
                   },
                 ),
               );
@@ -35,9 +34,7 @@ class _MainScreenState extends State<MainScreen> {
           ),
         ],
       ),
-      body: TourismList(
-        doneTourismPlaceList: doneTourismPlaceList,
-      ),
+      body: TourismList(),
     );
   }
 }

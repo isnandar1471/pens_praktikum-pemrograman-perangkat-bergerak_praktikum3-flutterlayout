@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:praktikum3_flutterlayout/model/tourism_place.dart';
+import 'package:praktikum3_flutterlayout/provider/done_tourism_provider.dart';
+import 'package:provider/provider.dart';
 
 class DoneTourismList extends StatelessWidget {
-  final List<TourismPlace> doneTourismPlaceList;
-
   const DoneTourismList({
     super.key,
-    required this.doneTourismPlaceList,
   });
 
   @override
   Widget build(BuildContext context) {
+    final List<TourismPlace> doneTourismPlaceList =
+        Provider.of<DoneTourismProvider>(
+      context,
+      listen: false,
+    ).doneTourismPlaceList;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Wisata Telah Dikunjungi'),
@@ -30,6 +35,7 @@ class DoneTourismList extends StatelessWidget {
                     fontSize: 16.0,
                   ),
                 ),
+                const Icon(Icons.done_outline),
               ],
             ),
           );
