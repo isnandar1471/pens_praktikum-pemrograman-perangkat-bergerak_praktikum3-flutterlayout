@@ -8,29 +8,20 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> galleryWidgetList = place.gallery.map(
-      (imageLink) {
-        return Padding(
-          padding: const EdgeInsets.all(4.0),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(30.0),
-            child: Image.network(imageLink),
-          ),
-        );
-      },
-    ).toList();
-
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Detail Wisata'),
+      ),
       body: SafeArea(
         child: ListView(
           children: <Widget>[
             Image.asset(place.imageAsset),
             Container(
-              margin: EdgeInsets.only(top: 16.0),
+              margin: const EdgeInsets.only(top: 16.0),
               child: Text(
                 place.name,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 30.0,
                   fontFamily: 'Lobster',
                 ),
@@ -43,19 +34,19 @@ class DetailScreen extends StatelessWidget {
                 children: <Widget>[
                   Column(
                     children: <Widget>[
-                      Icon(Icons.calendar_today),
+                      const Icon(Icons.calendar_today),
                       Text(place.dayOpen),
                     ],
                   ),
                   Column(
                     children: <Widget>[
-                      Icon(Icons.access_time),
+                      const Icon(Icons.access_time),
                       Text(place.timeOpen),
                     ],
                   ),
                   Column(
                     children: <Widget>[
-                      Icon(Icons.attach_money),
+                      const Icon(Icons.attach_money),
                       Text(place.price),
                     ],
                   ),
@@ -67,19 +58,27 @@ class DetailScreen extends StatelessWidget {
               child: Text(
                 place.description,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16.0,
                   fontFamily: 'Oxygen',
                 ),
               ),
             ),
-            Container(
-              height: 150,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: galleryWidgetList,
-              ),
-            ),
+            SizedBox(
+                height: 150,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(30.0),
+                        child: Image.network(place.gallery[index]),
+                      ),
+                    );
+                  },
+                  itemCount: place.gallery.length,
+                )),
           ],
         ),
       ),
