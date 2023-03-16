@@ -22,7 +22,11 @@ class ListItem extends StatelessWidget {
         children: <Widget>[
           Expanded(
             flex: 1,
-            child: Image.asset(place.imageAsset),
+            child: Image.asset(
+              place.imageAsset,
+              fit: BoxFit.fitWidth,
+              height: 100,
+            ),
           ),
           Expanded(
             flex: 2,
